@@ -1,0 +1,33 @@
+﻿@model ExamenApplication.Models.area
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h1>Eliminar</h1>
+
+<h2 style="color:Tomato;">Estas seguro que quieres eliminar esta área?</h2>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*Html.DisplayNameFor(model => model.nom_area)*@
+          <h2>Área</h2>
+        </dt>
+
+        <dd>
+          <h2>  @Html.DisplayFor(model => model.nom_area)</h2>
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>

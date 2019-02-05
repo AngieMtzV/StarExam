@@ -1,0 +1,45 @@
+﻿@model ExamenApplication.Models.empleado
+
+@{
+    ViewBag.Title = "Empleado";
+}
+
+<h2>Detalles del Empleado</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <div class="jumbotron">
+            <dt>
+                Área:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.area.nom_area)
+            </dd>
+
+            <dt>
+               Nombre:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nom_empleado)
+                @Html.DisplayFor(model => model.ap_pat)
+                @Html.DisplayFor(model => model.ap_mat)
+            </dd>
+
+            <dt>
+                Email:
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+
+</dl>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.emp_id }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

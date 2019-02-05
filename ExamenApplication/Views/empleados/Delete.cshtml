@@ -1,0 +1,44 @@
+﻿@model ExamenApplication.Models.empleado
+
+@{
+    ViewBag.Title = "Eliminar Empleado";
+}
+
+<h2>Eliminar</h2>
+
+<h3 style="color:Tomato;">Estas seguro que deseas eliminar el siguiente empleado?</h3> 
+
+@Html.ActionLink("Regresar", "Index")
+
+<div>
+    
+    <hr />
+
+    <div class="jumbotron">
+        <dl class="dl-horizontal">
+
+            <dt>
+                Empleado:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nom_empleado)
+                @Html.DisplayFor(model => model.ap_pat)
+                @Html.DisplayFor(model => model.ap_mat)
+
+            </dd>
+
+        </dl>
+        </div>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-danger" /> 
+            </div>
+
+           
+        }
+    </div>

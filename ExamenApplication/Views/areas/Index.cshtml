@@ -1,0 +1,34 @@
+﻿@model IEnumerable<ExamenApplication.Models.area>
+
+@{
+    ViewBag.Title = "Áreas";
+}
+
+<h2>Listado de Áreas </h2>
+
+
+<table class="table ">
+    <tr>
+        <th>
+            Área
+        </th>
+        <th></th>
+    </tr>
+    @*Muestra la lista de las áreas creadas*@
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nom_area)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.area_id }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.area_id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.area_id })
+        </td>
+    </tr>
+}
+
+</table>
+<p>
+    @Html.ActionLink("Agregar Área", "Create")
+</p>

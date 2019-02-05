@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ExamenApplication.Models.empleado>
+
+@{
+    ViewBag.Title = "Empledos";
+}
+
+<h2>Empledos Star Group</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Empleado", "Crear Empleado")
+</p>
+<table class="table table-sm">
+    <tr>
+        <th>
+            @*Html.DisplayNameFor(model => model.area.nom_area)*@
+            Área
+        </th>
+        <th>
+            @*Html.DisplayNameFor(model => model.nom_empleado)*@
+            Nombre del Empleado
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.area.nom_area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nom_empleado)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.emp_id }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.emp_id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.emp_id })
+        </td>
+    </tr>
+}
+
+</table>
